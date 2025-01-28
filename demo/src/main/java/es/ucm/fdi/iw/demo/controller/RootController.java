@@ -31,6 +31,15 @@ public class RootController {
 
 		return "index";
 	}
+
+	@GetMapping("/authors")
+	public String authors(
+			HttpSession session,
+			Model model,
+			@RequestParam(required = false) Integer entero) {
+
+		return "authors";
+	}
     
     @GetMapping("/play")            
     public String play(
