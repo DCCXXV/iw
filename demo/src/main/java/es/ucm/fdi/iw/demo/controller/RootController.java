@@ -17,6 +17,8 @@ public class RootController {
     private static Logger log = LogManager.getLogger(
         RootController.class);
 
+
+		
     private static final String OBJETIVO = "o";
     private static final String INTENTOS = "i";
     private final Random random = new Random();
