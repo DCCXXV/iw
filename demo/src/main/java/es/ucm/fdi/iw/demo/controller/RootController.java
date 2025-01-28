@@ -20,9 +20,18 @@ public class RootController {
     private static final String OBJETIVO = "o";
     private static final String INTENTOS = "i";
     private final Random random = new Random();
+
+	@GetMapping("/")
+	public String index(
+			HttpSession session,
+			Model model,
+			@RequestParam(required = false) Integer entero) {
+
+		return "index";
+	}
     
-    @GetMapping("/")            
-    public String index(
+    @GetMapping("/play")            
+    public String play(
     		HttpSession session,
             Model model,
             @RequestParam(required = false) Integer entero) {
