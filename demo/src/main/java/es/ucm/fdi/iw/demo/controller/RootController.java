@@ -79,7 +79,7 @@ public class RootController {
     	
 		session.setAttribute(INTENTOS, i);
 		session.setAttribute(OBJETIVO, o);
-    	
+
         log.info("\n -- El usuario dice: '{}'!\n -- Yo respondo '{}'", entero, respuesta); 
 		model.addAttribute("respuesta", respuesta);
 
