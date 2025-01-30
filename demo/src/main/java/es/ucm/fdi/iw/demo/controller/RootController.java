@@ -29,6 +29,7 @@ public class RootController {
 			Model model,
 			@RequestParam(required = false) Integer entero) {
 
+
 		return "index";
 	}
 
