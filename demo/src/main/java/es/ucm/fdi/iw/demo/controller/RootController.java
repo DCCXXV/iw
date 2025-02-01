@@ -67,11 +67,30 @@ public class RootController {
     	} else {
     		i ++;
     		if (entero < o) {
-				respuesta = "¡Más grande!  llevas " + i + " intentos.";
+				if(i==1){
+					respuesta = "¡Más grande!  llevas " + i + " intento.";
+				}
+				else{
+					respuesta = "¡Más grande!  llevas " + i + " intentos.";
+				}
+				
     		} else if (entero > o) {
-				respuesta =  "¡Más pequeño! llevas " + i + " intentos.";
+				if(i==1){
+					respuesta =  "¡Más pequeño! llevas " + i + " intento.";
+				}
+				else{
+					respuesta =  "¡Más pequeño! llevas " + i + " intentos.";
+				}
+				
     		} else {
-    			respuesta = "¡bingo! ¡era el " + o + "! - has necesitado " + i + " intentos... y ya he pensado en otro";
+				if(i==1){
+					respuesta = "¡Bingo! ¡Era el " + o + "! - has necesitado " + i + " intento... <br> ¿Serás capaz de adivinar el que estoy pensando ahora?";
+				}
+				else{
+					respuesta = "¡Bingo! ¡Era el " + o + "! - has necesitado " + i + " intentos... <br> ¿Serás capaz de adivinar el que estoy pensando ahora?";
+
+				}
+    			
     			i = 0; // resetea intentos
         		o = random.nextInt(11); // entre 0 y 10, ambos inclusive
     		}
