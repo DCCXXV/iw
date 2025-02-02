@@ -51,6 +51,7 @@ public class RootController {
     	Integer i = (Integer)session.getAttribute(INTENTOS);
     	Integer o = (Integer)session.getAttribute(OBJETIVO);
     	String respuesta = null;
+		String imgn = null; // la imagen
 
     	if (o == null || i == -1) {
     		o = random.nextInt(11); // entre 0 y 10, ambos inclusive
@@ -62,8 +63,10 @@ public class RootController {
 			 * (ver https://stackoverflow.com/a/49481797/15472)
 			 */
     		respuesta = "He pensado un número del 0 al 10 - ¿lo intentas adivinar?";
+			imgn = "/img/guessing.png";
     	} else if (entero == null) {
 			respuesta = "¿Vas a intentar adivinarlo, o qué? - llevas " + i + " intentos.";
+			imgn = "/img/guessing.png";
     	} else {
     		i ++;
     		if (entero < o) {
@@ -73,6 +76,7 @@ public class RootController {
 				else{
 					respuesta = "¡Más grande!  llevas " + i + " intentos.";
 				}
+				imgn = "/img/guessing.png";
 				
     		} else if (entero > o) {
 				if(i==1){
@@ -81,7 +85,7 @@ public class RootController {
 				else{
 					respuesta =  "¡Más pequeño! llevas " + i + " intentos.";
 				}
-				
+				imgn = "/img/guessing.png";
     		} else {
 				if(i==1){
 					respuesta = "¡Bingo! ¡Era el " + o + "! - has necesitado " + i + " intento... <br> ¿Serás capaz de adivinar el que estoy pensando ahora?";
@@ -90,7 +94,7 @@ public class RootController {
 					respuesta = "¡Bingo! ¡Era el " + o + "! - has necesitado " + i + " intentos... <br> ¿Serás capaz de adivinar el que estoy pensando ahora?";
 
 				}
-    			
+    			imgn = "/img/bingo.jpeg";
     			i = 0; // resetea intentos
         		o = random.nextInt(11); // entre 0 y 10, ambos inclusive
     		}
@@ -101,6 +105,7 @@ public class RootController {
 
         log.info("\n -- El usuario dice: '{}'!\n -- Yo respondo '{}'", entero, respuesta); 
 		model.addAttribute("respuesta", respuesta);
+		model.addAttribute("img", imgn);
 
 		return "adivina";
     }

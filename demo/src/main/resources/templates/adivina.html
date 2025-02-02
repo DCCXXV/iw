@@ -43,6 +43,10 @@
       
       <h1 class="text-center text-dark">Intenta adivinar el número</h1> <!-- Texto oscuro -->
       <hr>
+      <div class="text-center mb-4">
+        <!-- Se muestra la imagen de acuerdo al estado del juego -->
+        <img th:src="@{${img}}" class="img-fluid" alt="Estado del juego" style="max-width: 200px;">
+      </div>
       <form class="text-center m-3 text-dark"> <!-- Texto oscuro en el formulario -->
         <button class="btn btn-dark" type="submit" name="entero" value="0">0</button>
         <button class="btn btn-dark" type="submit" name="entero" value="1">1</button>
